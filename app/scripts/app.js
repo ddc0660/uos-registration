@@ -61,6 +61,18 @@ app.controller('MainCtrl', function ($scope, Registrants) {
       alert('uh oh');
     }
   };
+  
+  // remove registrant
+  $scope.remove = function (id) {
+    var removed = Registrants.$remove(id);
+    
+    if(removed) {
+      alert('removed successfully');
+    } else {
+      alert('uh oh');
+    }
+  };
+  
 });
 
 
