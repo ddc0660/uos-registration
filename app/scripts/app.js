@@ -4,23 +4,19 @@ app.value('fbURL', 'https://amber-fire-7526.firebaseio.com/');
 
 app.config(function ($routeProvider) {
   $routeProvider
-/*    
     .when('/main', {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl',
       title: 'Main Title'
     })
-*/
     .when('/edit/:id', {
       templateUrl: 'views/edit.html',
       controller: 'EditCtrl',
       title: 'Edit Title'
-    });
-/*
+    })
     .otherwise({
       redirectTo: '/main'
     });
-*/
 });
 
 
@@ -69,8 +65,8 @@ app.controller('MainCtrl', function ($scope, Registrants) {
 
 
 app.controller('EditCtrl', function ($scope, $location, $routeParams, $firebaseObject, fbURL) {
-  var registrantURL = new Firebase(fbURL + $routeParams.id);
-  $scope.Registrant = $firebaseObject(registrantURL);
+  var registrantURL = new Firebase(    fbURL + 'registrants/' + $routeParams.id);
+  $scope.registrant = $firebaseObject(registrantURL);
   
   $scope.edit = function() {
     $scope.registrant.$save();
@@ -94,73 +90,3 @@ myApp.run(['$location', '$rootScope', function($location, $rootScope) {
 }]);
 
 */
-
-
-
-
-
-/*
-app.factory("Registrant", ["$firebaseObject",
-    function($firebaseObject) {
-      return function() {
-        // create a reference to the Firebase where we will store our data
-        var ref = new Firebase("https://amber-fire-7526.firebaseio.com/");
-        var registrantRef = ref.child("registrants");
-        
-        // return it as a synchronized object
-        return $firebaseObject(registrantRef);
-      };
-    }
-  ]);
-*/
-
-
-/*
-app.controller("RegistrantController", function RegistrantController($scope, $firebase) {
-  var url = 'https://amber-fire-7526.firebaseio.com/'; 
-  var fireRef = new Firebase(url);
-  
-  $scope.addRegistrant = function () {
-    var newRegistrant = $scope.registrant;
-    $scope.registrants.$add({
-      email: newRegistrant.email,
-      firstName: newRegistrant.firstName,
-      lastName: newRegistrant.lastName
-    });
-    alert('Registrant added to Firebase!');
-  };
-  
-  $scope.registrants = $firebaseArray(fireRef);
-  
-});
-*/
-
-
-
-
-
-/*
-["$scope", "Registrant",
- 
-  
-  
-  
-  
-  
-  function($scope, Registrant) {
-    // put our registrant in the scope for the use in DOM
-    $scope.registrant = Registrant();
-    
-    
-    $scope.saveRegistrant = function() {
-      // save registrant here
-      // calling $save() on the synchronized object syncs all data bask to Firebase
-      $scope.registrant.$save().then(function() {
-        //$scope.registrant.email = "";
-        alert('Registrant saved to Firebase!');
-      }).catch(function(error){
-        alert('Error!');
-      });
-    };
-  }
-]);*/
