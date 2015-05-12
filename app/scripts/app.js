@@ -71,7 +71,7 @@ app.controller('MainCtrl', function ($scope, Registrants) {
 });
 
 
-app.controller('EditCtrl', function ($scope, $location, $routeParams, $firebaseObject, fbURL) {
+app.controller('EditCtrl', function ($scope, $rootScope, $location, $routeParams, $firebaseObject, fbURL) {
   var registrantURL = new Firebase(    fbURL + 'registrants/' + $routeParams.id);
   $scope.registrant = $firebaseObject(registrantURL);
   
@@ -79,6 +79,15 @@ app.controller('EditCtrl', function ($scope, $location, $routeParams, $firebaseO
     $scope.registrant.$save();
     $location.path('/');
   };
+  
+  // cancel button function
+  $scope.go = function (path) {
+    // indicate last form viewed
+    $rootScope.lastForm = "edit";
+    // send user to path provided in ng-click
+    $location.path(path);
+  };
+  
 });
 
 
