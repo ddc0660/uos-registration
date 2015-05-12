@@ -27,6 +27,7 @@ app.factory('Registrants', function (fbURL, $firebaseArray) {
 app.controller('MainCtrl', function ($scope, Registrants) {
   
   $scope.registrants = Registrants;
+  $scope.predicate = '-firstName';
   
   // add registrant
   $scope.add = function() {

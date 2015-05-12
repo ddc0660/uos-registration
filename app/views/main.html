@@ -5,21 +5,42 @@
            <label>Email: *</label>
            <input type="text" ng-model="email" placeholder="Email" required>
          </div>
-         <input type="text" ng-model="firstName" placeholder="First Name">
-         <input type="text" ng-model="lastName" placeholder="Last Name">
-         <input type="text" ng-model="address1" placeholder="Address">
-         <input type="text" ng-model="address2" placeholder="Address Line 2">
-         <input type="text" ng-model="city" placeholder="City">
-         <input type="text" ng-model="state" placeholder="State">
-         <input type="text" ng-model="zip" placeholder="Zip">
-         <input type="text" ng-model="phone" placeholder="Phone">
-         <select ng-model="unitType">
-           <option>Pack</option>
-           <option>Troop</option>
-           <option>Crew</option>
-         </select>
-         <input type="text" ng-model="unitNumber" placeholder="Unit Number">
-         <input type="submit" value="Save" class="btn btn-primary">
+         <div>
+           <input type="text" ng-model="firstName" placeholder="First Name">
+         </div>
+         <div>
+           <input type="text" ng-model="lastName" placeholder="Last Name">
+         </div>
+         <div>
+           <input type="text" ng-model="address1" placeholder="Address">
+         </div>
+         <div>
+           <input type="text" ng-model="address2" placeholder="Address Line 2">
+         </div>
+         <div>
+           <input type="text" ng-model="city" placeholder="City">
+         </div>
+         <div>
+           <input type="text" ng-model="state" placeholder="State">
+         </div>
+         <div>
+           <input type="text" ng-model="zip" placeholder="Zip">
+         </div>
+         <div>
+           <input type="text" ng-model="phone" placeholder="Phone">
+         </div>
+         <div>
+           <select ng-model="unitType">
+             <option>Pack</option>
+             <option>Troop</option>
+             <option>Crew</option>
+           </select>
+         </div>
+         <div>
+           <input type="text" ng-model="unitNumber" placeholder="Unit Number">
+         <div>
+           <input type="submit" value="Save" class="btn btn-primary">
+         </div>
        </form>
        
        
@@ -29,13 +50,13 @@
       
       <table class="table">
         <thead>
-          <th>First Name</th>
-          <th>Last Name</th>
+          <th><a href="" ng-click="predicate='firstName'; reverse=!reverse">First Name</a></th>
+          <th><a href="" ng-click="predicate='lastName'; reverse=!reverse">Last Name</a></th>
           <th>&nbsp;</th>
           <th>&nbsp;</th>
         </thead>
         <tbody>
-          <tr ng-repeat="(id, registrant) in registrants">
+          <tr ng-repeat="(id, registrant) in registrants | orderBy:predicate:reverse">
             <td>{{ registrant.firstName }}</td>
             <td>{{ registrant.lastName }}</td>
             <td>
