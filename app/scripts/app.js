@@ -23,6 +23,10 @@ app.config(function ($routeProvider) {
       redirectTo: '/main'
     });
     
+    
+    // Pretty urls can be enabled with html5Mode, but requires server-side
+    // configuration. Refer here for more details...
+    // http://stackoverflow.com/questions/24730654/
     // use the HTML5 History API
     //$locationProvider.html5Mode(true);
 });

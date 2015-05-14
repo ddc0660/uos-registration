@@ -12,6 +12,8 @@ University of Scouting is a one day training event for youth and adult scouts. I
 
 This event has occurred for several years running. The existing system is cobbled together and very manually driven. Students select preferences for each period. Those preferences are downloaded into a spreadsheet and the admin slides students into their highest prefererred classes on a first come, first served basis. Student's schedules are not confirmed until the day of the event where they learn which courses they'll be taking. Depending on the popularity of a given course, students may be seated in courses that they ranked lower, or not at all!
 
+2014 course catalog can be found here: http://www.hudsonvalleyscouting.org/document/uos-2014-course-handbook-2014-10-10/142743
+
 ## Functional Requirements
 
 There are two types of user: student and admin. Students can be either youth or adult.
