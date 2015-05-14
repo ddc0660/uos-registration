@@ -3,6 +3,17 @@ body {
   margin-bottom: 10em;
 }
 
+.btn-primary { 
+  color: #ffffff;
+  background-color: #397AB2;
+  border-color: #397AB2;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #2C5E89;
+}
+
 .footer {
   margin-top: 200px;
 }
