@@ -1,0 +1,27 @@
+<form>
+  <p>All fields marked with an * are required.</p>
+  <div>
+    <label for="firstName">
+      First Name: *
+    </label>
+    <input type="text" id="firstName" name="firstName" ng-model="firstName" required>
+  </div>
+  <div>
+    <label for="lastName">
+      Last Name: *
+    </label>
+    <input type="text" id="lastName" name="lastName" ng-model="lastName" required>
+  </div>
+  <div>
+    <label for="type">
+      Type
+    </label>
+    <input type="radio" name="type">Youth<br>
+    <input type="radio" name="type">Adult<br>
+    <input type="radio" name="type">Instructor/Staff Taking Classes
+  </div>
+  <div>
+    <input type="button" value="Cancel" ng-click="go('students')">
+    <button type="button" ng-click="add()">Save</button>
+  </div>
+</form>
