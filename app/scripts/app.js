@@ -14,14 +14,26 @@ app.config(function ($routeProvider) {
       controller: 'EditCtrl',
       title: 'Edit Title'
     })
+    .when('/courses', {
+      templateUrl: 'views/courses.html',
+      controller: 'CoursesCtrl',
+      title: 'Courses'
+    })
     .otherwise({
       redirectTo: '/main'
     });
+    
+    // use the HTML5 History API
+    //$locationProvider.html5Mode(true);
 });
 
 
 app.factory('Registrants', function (fbURL, $firebaseArray) {
   return $firebaseArray(new Firebase(fbURL + 'registrants'));
+});
+
+app.factory('Courses', function (fbURL, $firebaseArray) {
+  return $firebaseArray(new Firebase(fbURL + 'courses'));
 });
 
 app.controller('MainCtrl', function ($scope, Registrants) {
@@ -90,6 +102,10 @@ app.controller('EditCtrl', function ($scope, $rootScope, $location, $routeParams
   
 });
 
+
+app.controller('CoursesCtrl', function ($scope, $rootScope, $location, $routeParams, Courses) {
+  $scope.courses = Courses;
+});
 
 /*
 
