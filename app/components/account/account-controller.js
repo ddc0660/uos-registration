@@ -1,12 +1,12 @@
 angular.module('uosApp')
- .controller('AccountCtrl', function ($scope, Registrants) {
+ .controller('AccountCtrl', function ($scope, Accounts) {
   
-  $scope.registrants = Registrants;
+  $scope.accounts = Accounts;
   $scope.predicate = '-firstName';
   
   // add registrant
   $scope.add = function() {
-    var save = Registrants.$add({
+    var save = Accounts.$add({
       email: $scope.email,
       firstName: $scope.firstName,
       lastName: $scope.lastName,
@@ -40,7 +40,7 @@ angular.module('uosApp')
   
   // remove registrant
   $scope.remove = function (id) {
-    var removed = Registrants.$remove(id);
+    var removed = Accounts.$remove(id);
   };
   
 });

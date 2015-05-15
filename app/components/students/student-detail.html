@@ -16,9 +16,9 @@
     <label for="type">
       Type
     </label>
-    <input type="radio" name="type">Youth<br>
-    <input type="radio" name="type">Adult<br>
-    <input type="radio" name="type">Instructor/Staff Taking Classes
+    <input type="radio" ng-model="type" value="Youth">Youth<br>
+    <input type="radio" ng-model="type" value="Adult">Adult<br>
+    <input type="radio" ng-model="type" value="StaffTakingClasses">Instructor/Staff Taking Classes
   </div>
   <div>
     <input type="button" class="btn btn-primary" value="Cancel" ng-click="go('students')">

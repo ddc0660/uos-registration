@@ -16,7 +16,7 @@ app.config(function ($routeProvider) {
     })
     .when('/students', {
       templateUrl: 'components/students/students.html',
-      //controller: 'StudentCtrl',
+      controller: 'StudentCtrl',
       title: 'Students'
     })
     .when('/students/create', {

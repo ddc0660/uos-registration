@@ -78,11 +78,11 @@ Continue button
           <th>&nbsp;</th>
         </thead>
         <tbody>
-          <tr ng-repeat="(id, registrant) in registrants | orderBy:predicate:reverse">
-            <td>{{ registrant.firstName }}</td>
-            <td>{{ registrant.lastName }}</td>
+          <tr ng-repeat="(id, account) in accounts | orderBy:predicate:reverse">
+            <td>{{ account.firstName }}</td>
+            <td>{{ account.lastName }}</td>
             <td>
-              <a href="#/edit/{{ registrant.$id }}">Edit</a>
+              <a href="#/edit/{{ account.$id }}">Edit</a>
             </td>
             <td>
               <a href="#" ng-click="remove(id)">Remove</a>
