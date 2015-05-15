@@ -3,6 +3,8 @@ angular.module('uosApp')
     
     $scope.students = Students;
     
+    $scope.student.hasSelectedCourses = false;
+    
     // Add new student functionality
     $scope.add = function() {
       var save = Students.$add({
