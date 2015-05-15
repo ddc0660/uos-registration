@@ -1,9 +1,7 @@
 angular.module('uosApp')
-  .controller('StudentCtrl', function($scope, $rootScope, $location, Students) {
+  .controller('StudentCtrl', function($scope, $rootScope, $location, Students, accountId) {
     
     $scope.students = Students;
-    
-    $scope.student.hasSelectedCourses = false;
     
     // Add new student functionality
     $scope.add = function() {
