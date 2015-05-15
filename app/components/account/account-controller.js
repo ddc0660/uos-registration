@@ -1,5 +1,5 @@
 angular.module('uosApp')
- .controller('AccountCtrl', function ($scope, Accounts) {
+ .controller('AccountCtrl', function ($scope, $location, Accounts, principal) {
   
   $scope.accounts = Accounts;
   $scope.predicate = '-firstName';
@@ -20,19 +20,23 @@ angular.module('uosApp')
       unitNumber: $scope.unitNumber
     });
     
-    $scope.email = '';
-    $scope.firstName = '';
-    $scope.lastName = '';
-    $scope.address1 = '';
-    $scope.address2 = '';
-    $scope.city = '';
-    $scope.state = '';
-    $scope.zip = '';
-    $scope.phone = '';
-    $scope.unitNumber = '';
-  
     if(save) {
+      
+      principal.email = $scope.email;
+      
+      $scope.email = '';
+      $scope.firstName = '';
+      $scope.lastName = '';
+      $scope.address1 = '';
+      $scope.address2 = '';
+      $scope.city = '';
+      $scope.state = '';
+      $scope.zip = '';
+      $scope.phone = '';
+      $scope.unitNumber = '';
+      
       alert('saved successfully');
+      $location.path('/students');
     } else {
       alert('uh oh');
     }

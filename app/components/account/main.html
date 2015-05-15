@@ -61,7 +61,7 @@ Continue button
          <div>
            <input type="text" ng-model="unitNumber" placeholder="Unit Number">
          <div>
-           <input type="submit" value="Save" class="btn btn-primary">
+           <input type="submit" value="Save" class="button--primary">
          </div>
        </form>
        
@@ -74,6 +74,7 @@ Continue button
         <thead>
           <th><a href="" ng-click="predicate='firstName'; reverse=!reverse">First Name</a></th>
           <th><a href="" ng-click="predicate='lastName'; reverse=!reverse">Last Name</a></th>
+          <th>Email</th>
           <th>&nbsp;</th>
           <th>&nbsp;</th>
         </thead>
@@ -81,6 +82,7 @@ Continue button
           <tr ng-repeat="(id, account) in accounts | orderBy:predicate:reverse">
             <td>{{ account.firstName }}</td>
             <td>{{ account.lastName }}</td>
+            <td>{{ account.email }}</td>
             <td>
               <a href="#/edit/{{ account.$id }}">Edit</a>
             </td>

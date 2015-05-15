@@ -1,5 +1,5 @@
 <section>
-  <a ng-href="#/students/create">Add new student</a>
+  <a ng-href="#/students/create" class="cta--primary">Add new student</a>
 </section>
 <section id="student-list">
   <h2>Students</h2>
@@ -12,7 +12,7 @@
       <th>Actions</th>
     </thead>
     <tbody>
-      <tr ng-repeat="(id, student) in students">
+      <tr ng-repeat="(id, student) in students | filter:owner">
         <td>{{ student.firstName }}</td>
         <td>{{ student.lastName }}</td>
         <td>{{ student.type }}</td>
