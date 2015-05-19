@@ -18,7 +18,7 @@ angular.module('uosApp')
       
       if(save) {
         alert("yay!");
-        $location.path('students');
+        $location.path('/students');
       } else {
         alert("boo!");
       }

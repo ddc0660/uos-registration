@@ -29,6 +29,11 @@ app.config(function ($routeProvider) {
       controller: 'CoursesCtrl',
       title: 'Courses'
     })
+    .when('/courses/register/:id', {
+      templateUrl: 'components/courses/courses.html',
+      controller: 'CoursesCtrl',
+      title: 'Course Registration'
+    })
     .otherwise({
       redirectTo: '/account'
     });

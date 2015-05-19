@@ -1,18 +1,23 @@
  <table class="table">
         <thead>
+          <th>&nbsp;</th>
           <th>Course Code</a></th>
           <th>Course Name</a></th>
           <th>Period</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
         </thead>
         <tbody>
           <tr ng-repeat="(id, course) in courses">
+            <td>
+              <input type="radio" ng-model="s" value="1" name="period1">
+            </td>
             <td>{{ course.code }}</td>
             <td>
               {{ course.name }}
               <div>
-                <h4>Description:</h4>
                 <span>{{ course.description }}</span>
-                <h4>Instructor:</h4>
+                Instructor:
                 <span>{{ course.instructor }}</span>
               </div>
             </td>
