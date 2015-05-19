@@ -2,16 +2,18 @@ angular.module('uosApp')
   .controller('StudentCtrl', function($scope, $rootScope, $location, Students, principal) {
     
     $scope.students = Students;
-    $scope.owner = principal.owner;
+    $scope.owner = principal.email;
+    $scope.firstName = principal.firstName;
+    
     //$filter('students');
     
     // Add new student functionality
     $scope.add = function() {
       var save = Students.$add({
         owner: principal.email,
-        firstName: $scope.firstName,
-        lastName: $scope.lastName,
-        type: $scope.type
+        firstName: $scope.student.firstName,
+        lastName: $scope.student.lastName,
+        type: $scope.student.type
       });
       
       if(save) {

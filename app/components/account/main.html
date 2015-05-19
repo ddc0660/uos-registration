@@ -77,6 +77,7 @@ Continue button
           <th>Email</th>
           <th>&nbsp;</th>
           <th>&nbsp;</th>
+          <th>&nbsp;</th>
         </thead>
         <tbody>
           <tr ng-repeat="(id, account) in accounts | orderBy:predicate:reverse">
@@ -88,6 +89,9 @@ Continue button
             </td>
             <td>
               <a href="#" ng-click="remove(id)">Remove</a>
+            </td>
+            <td>
+              <a href="#" ng-click="impersonate(account.email, account.firstName)">Impersonate</a>
             </td>
           </tr>
         </tbody>

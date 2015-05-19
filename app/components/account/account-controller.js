@@ -23,6 +23,7 @@ angular.module('uosApp')
     if(save) {
       
       principal.email = $scope.email;
+      principal.firstName = $scope.firstName;
       
       $scope.email = '';
       $scope.firstName = '';
@@ -45,6 +46,13 @@ angular.module('uosApp')
   // remove registrant
   $scope.remove = function (id) {
     var removed = Accounts.$remove(id);
+  };
+  
+  // impersonate account
+  $scope.impersonate = function (email, firstName) {
+    principal.email = email;
+    principal.firstName = firstName;
+    $location.path('/students');
   };
   
 });

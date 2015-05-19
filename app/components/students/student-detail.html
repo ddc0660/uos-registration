@@ -4,21 +4,21 @@
     <label for="firstName">
       First Name: *
     </label>
-    <input type="text" id="firstName" name="firstName" ng-model="firstName" required>
+    <input type="text" id="firstName" name="firstName" ng-model="student.firstName" required>
   </div>
   <div>
     <label for="lastName">
       Last Name: *
     </label>
-    <input type="text" id="lastName" name="lastName" ng-model="lastName" required>
+    <input type="text" id="lastName" name="lastName" ng-model="student.lastName" required>
   </div>
   <div>
     <label for="type">
       Type
     </label>
-    <input type="radio" ng-model="type" value="Youth">Youth<br>
-    <input type="radio" ng-model="type" value="Adult">Adult<br>
-    <input type="radio" ng-model="type" value="StaffTakingClasses">Instructor/Staff Taking Classes
+    <input type="radio" ng-model="student.type" value="Youth">Youth<br>
+    <input type="radio" ng-model="student.type" value="Adult">Adult<br>
+    <input type="radio" ng-model="student.type" value="StaffTakingClasses">Instructor/Staff Taking Classes
   </div>
   <div>
     <input type="button" class="button--primary" value="Cancel" ng-click="go('students')">
