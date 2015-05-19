@@ -1,33 +1,37 @@
  <table class="table">
-        <thead>
-          <th>&nbsp;</th>
-          <th>Course Code</a></th>
-          <th>Course Name</a></th>
-          <th>Period</th>
-          <th>&nbsp;</th>
-          <th>&nbsp;</th>
-        </thead>
-        <tbody>
-          <tr ng-repeat="(id, course) in courses">
-            <td>
-              <input type="radio" ng-model="s" value="1" name="period1">
-            </td>
-            <td>{{ course.code }}</td>
-            <td>
-              {{ course.name }}
-              <div>
-                <span>{{ course.description }}</span>
-                Instructor:
-                <span>{{ course.instructor }}</span>
-              </div>
-            </td>
-            <td>{{ course.period }}</td>
-            <td>
-              <a href="#">Edit</a>
-            </td>
-            <td>
-              <a href="#">Remove</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+  <thead>
+    <th>&nbsp;</th>
+    <th>Course Code</a></th>
+    <th>Course Name</a></th>
+    <th>Period</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="(id, course) in courses">
+      <td>
+        <input type="radio" ng-model="s" value="{{ course.code }}" name="{{ course.period }}">
+      </td>
+      <td>{{ course.code }}</td>
+      <td>
+        {{ course.name }}
+        <div>
+          <span>{{ course.description }}</span>
+          Instructor:
+          <span>{{ course.instructor }}</span>
+        </div>
+      </td>
+      <td>{{ course.period }}</td>
+      <td>
+        <a href="#">Edit</a>
+      </td>
+      <td>
+        <a href="#">Remove</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <input type="button" class="button--primary" value="Cancel" ng-click="go('students')">
+  <button type="button" class="button--primary" ng-click="register()">Save</button>
+</div>

@@ -49,10 +49,6 @@ app.config(function ($routeProvider) {
 
 
 
-app.factory('Courses', function (fbURL, $firebaseArray) {
-  return $firebaseArray(new Firebase(fbURL + 'courses'));
-});
-
 app.controller('EditCtrl', function ($scope, $rootScope, $location, $routeParams, $firebaseObject, fbURL) {
   var registrantURL = new Firebase(    fbURL + 'registrants/' + $routeParams.id);
   $scope.registrant = $firebaseObject(registrantURL);
@@ -70,15 +66,6 @@ app.controller('EditCtrl', function ($scope, $rootScope, $location, $routeParams
     $location.path(path);
   };
   
-});
-
-
-app.controller('CoursesCtrl', function ($scope, $rootScope, $location, $routeParams, Courses) {
-  $scope.courses = Courses;
-  
-  $scope.register = function() {
-  
-  };
 });
 
 /*
