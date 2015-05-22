@@ -1,7 +1,6 @@
 angular.module('uosApp')
 .controller('CoursesCtrl', function ($scope, $rootScope, $location, $routeParams, Student, Courses) {
   
-  $scope.id = $routeParams.id;
   $scope.student = Student.getById($routeParams.id);
   $scope.courses = Courses;
   
