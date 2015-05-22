@@ -1,3 +1,7 @@
+Student information: {{ id }} <br>
+First Name: {{ student.firstName }}
+
+ <table class="table">
   <thead>
     <th>&nbsp;</th>
     <th>Course Code</th>
@@ -7,7 +11,7 @@
     <th>&nbsp;</th>
   </thead>
   <tbody>
-    <tr ng-repeat="(id, course) in courses | filter: { eligibleTypes: student.type }">
+    <tr ng-repeat="(id, course) in courses | filter: { eligibleTypes: student.type } | orderBy: ['period', 'code']">
       <td>
         <input type="radio" ng-model="s" value="{{ course.code }}" name="{{ course.period }}">
       </td>
