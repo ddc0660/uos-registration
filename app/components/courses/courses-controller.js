@@ -4,6 +4,7 @@ angular.module('uosApp')
   $scope.id = $routeParams.id;
   $scope.student = Student.getById($routeParams.id);
   $scope.courses = Courses;
+  $scope.schedule = 'empty';
   
   // register function
   $scope.register = function() {

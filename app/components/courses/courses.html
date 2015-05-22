@@ -13,7 +13,7 @@ First Name: {{ student.firstName }}
   <tbody>
     <tr ng-repeat="(id, course) in courses | filter: { eligibleTypes: student.type } | orderBy: ['period', 'code']">
       <td>
-        <input type="radio" ng-model="s" value="{{ course.code }}" name="{{ course.period }}">
+        <input type="radio" ng-model="schedule" ng-value="course" id="{{ course }}" name="{{ course.period }}">
       </td>
       <td>{{ course.code }}</td>
       <td>
@@ -34,6 +34,12 @@ First Name: {{ student.firstName }}
     </tr>
   </tbody>
 </table>
+
+ng-model = {{ schedule }} <br>
+ng-value = {{ course }} <br>
+id-value = {{ course }} <br>
+name =  {{ course.period }} <br>
+
 <div>
   <input type="button" class="button--primary" value="Cancel" ng-click="go('students')">
   <button type="button" class="button--primary" ng-click="register()">Save</button>
